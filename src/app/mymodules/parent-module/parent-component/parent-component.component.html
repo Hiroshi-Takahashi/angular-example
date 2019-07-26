@@ -16,3 +16,45 @@
     ※外部コンテンツではない
  -->
 <app-child-component></app-child-component>
+<!--
+    以下、初期表示したときのコンソールログ(/****/コメントは除く)
+    parent-component constructor
+        parent-inner-component.component.ts:11   parent-inner-component constructor
+            child-component.component.ts:11     child-component constructor
+    /** 自分のコンポーネント初期化  */
+    parent-component.component.ts:17 parent-component ngOnInit
+    parent-component.component.ts:20 parent-component ngDoCheck
+        /** 外部コンテンツの初期化  **/
+        parent-inner-component.component.ts:17   parent-inner-component ngOnInit
+        parent-inner-component.component.ts:20   parent-inner-component ngDoCheck
+        parent-inner-component.component.ts:23   parent-inner-component AfterContentInit
+        parent-inner-component.component.ts:26   parent-inner-component AfterContentChecked
+    /** 外部コンテンツの初期化終了後の親の処理  **/
+    parent-component.component.ts:23 parent-component AfterContentInit
+    parent-component.component.ts:26 parent-component AfterContentChecked
+            /** 子コンポーネントの初期化  **/
+            child-component.component.ts:18     child-component ngOnInit
+            child-component.component.ts:21     child-component ngDoCheck
+            child-component.component.ts:24     child-component AfterContentInit
+            child-component.component.ts:27     child-component AfterContentChecked
+            /** 子コンポーネントのView初期化後の処理  **/
+            child-component.component.ts:30     child-component AfterViewInit
+            child-component.component.ts:33     child-component AfterViewChecked
+        /** 外部コンテンツのView初期化後の処理  **/
+        parent-inner-component.component.ts:29   parent-inner-component AfterViewInit
+        parent-inner-component.component.ts:32   parent-inner-component AfterViewChecked
+    /** 親コンポーネントのView初期化後の処理  **/
+    parent-component.component.ts:29 parent-component AfterViewInit
+    parent-component.component.ts:32 parent-component AfterViewChecked
+    core.js:33452 Angular is running in the development mode. Call enableProdMode() to enable the production mode.
+    parent-component.component.ts:20 parent-component ngDoCheck
+        parent-inner-component.component.ts:20   parent-inner-component ngDoCheck
+        parent-inner-component.component.ts:26   parent-inner-component AfterContentChecked
+    parent-component.component.ts:26 parent-component AfterContentChecked
+            child-component.component.ts:21     child-component ngDoCheck
+            child-component.component.ts:27     child-component AfterContentChecked
+            child-component.component.ts:33     child-component AfterViewChecked
+        parent-inner-component.component.ts:32   parent-inner-component AfterViewChecked
+    parent-component.component.ts:32 parent-component AfterViewChecked
+    client:52 [WDS] Live Reloading enabled.
+-->
