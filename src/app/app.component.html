@@ -1,5 +1,9 @@
 <div>
-  <input type="checkbox" (change)="onchange()">
-  <input type="checkbox" (change)="onchange2()">
+  <!-- 親コンポーネント -->
+　<app-parent-component>
+    <!-- 親コンポーネントの外部コンテンツ -->
+  　<app-parent-inner-component>
+    </app-parent-inner-component>
+  </app-parent-component>
 </div>
 <router-outlet></router-outlet>

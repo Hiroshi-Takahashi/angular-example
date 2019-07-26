@@ -1,2 +1,18 @@
-<p (click)="doClick()">example-component works!</p>
-<input type="checkbox" (change)="onchange()" checked/>
+<!--
+    Angularの定義ではこのテンプレート全体のことを"ビュー"と呼ぶ
+-->
+<p>parent component!</p>
+<ng-content>
+    <!--
+        Angularの定義では、ng-content配下のことを"外部コンポーネント"と呼ぶ
+        コンポーネント配下の要素(以下のxxxxx部分)がng-contentに代入される
+        <app-parent-component>
+            xxxxx
+        </app-parent-component>
+    -->
+</ng-content>
+<!-- 
+    他のコンポーネント
+    ※外部コンテンツではない
+ -->
+<app-child-component></app-child-component>

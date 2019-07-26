@@ -10,13 +10,9 @@ export class ParentComponentComponent implements OnInit, OnChanges, OnDestroy, D
   constructor() {
     console.log("parent-component constructor")
   }
-  onchange() {
-    console.log("onchange")
-  }
   ngOnChanges() {
     console.log("parent-component ngOnChanges")
   }
-
   ngOnInit() {
     console.log("parent-component ngOnInit")
   }
